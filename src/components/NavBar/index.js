@@ -39,9 +39,9 @@ const NavBar = () => {
             size="large"
             variant="text"
             color="primary"
-            style={{ padding: "12px 8px" }}
+            style={{ padding: "12px 8px", fontWeight: "bold" }}
             activeStyle={{
-              fontWeight: "bold",
+              color: "#0071ff",
             }}
           >
             {title}
