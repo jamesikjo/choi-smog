@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import AboutUs from "./pages/AboutUs.js";
+import LandingPage from "./pages/LandingPage.js";
+import ContactForm from "./pages/ContactForm";
+import { LanguageProvider } from "./contexts/LanguageContext.js";
+import Coupon from "./pages/Coupon";
+import ScrollUpButton from "react-scroll-up-button";
+import ScrollToTop from "./ScrollToTop.js";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollUpButton ShowAtPosition={50} ToggledStyle={{ opacity: 0.8 }} />
+      <ScrollToTop />
+      <LanguageProvider>
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/about">
+            <AboutUs />
+          </Route>
+          <Route exact path="/coupon">
+            <Coupon />
+          </Route>
+          <Route exact path="/contact">
+            <ContactForm />
+          </Route>
+        </Switch>
+      </LanguageProvider>
+    </>
   );
-}
+};
 
 export default App;
