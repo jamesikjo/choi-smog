@@ -5,7 +5,6 @@ import {
   Button,
   Grid,
   Container,
-  Divider,
   makeStyles,
 } from "@material-ui/core";
 import Layout from "../components/Layout";
@@ -58,18 +57,12 @@ const ContactForm = () => {
         <label>
           <Typography
             color="primary"
-            variant="h4"
+            variant="h5"
             align="center"
             justify="center"
           >
             <b>Contact Us</b>
           </Typography>
-          <Divider
-            style={{
-              width: "2.5em",
-              marginTop: "0.3em",
-            }}
-          />
         </label>
         <Container maxWidth="xs">
           <Grid container direction="column" justifyContent="center">

@@ -23,7 +23,6 @@ const languageData = {
       "We smog regular and gross polluters.",
       "We specialize in quick and efficient smogs.",
       "No repairs, and we smog check all Vehicles.",
-      "Located in Los Angeles, CA (Koreatown).",
     ],
     card_1: "Smog Check Coupon",
     card_1_desc:
@@ -69,7 +68,6 @@ const languageData = {
       "우리는 정기적이고 심각한 오염 물질을 스모그합니다.",
       "우리는 빠르고 효율적인 스모그를 전문으로 합니다.",
       "수리하지 않고 모든 차량을 스모그 점검합니다.",
-      "캘리포니아주 로스앤젤레스(코리아타운)에 있습니다.",
     ],
     card_1: "스모그 체크 쿠폰",
     card_1_desc:

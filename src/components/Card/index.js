@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Grid, Container, Button } from "@material-ui/core";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import CardItem from "./CardItem";
-import coupon from "../../assets/images/coupon.png";
-import location from "../../assets/images/location-icon.png";
-import star from "../../assets/images/star.png";
-import languageData from "./../../assets/languageData";
-import LogoDivider from "../LogoDivider";
 
-const CardGroup = ({ setValue }) => {
+import languageData from "./../../assets/languageData";
+
+const CardGroup = () => {
+  const history = useHistory();
   const { language } = useContext(LanguageContext);
   const {
     card_1,
@@ -27,40 +25,33 @@ const CardGroup = ({ setValue }) => {
     {
       title: card_1,
       body: card_1_desc,
-      cardImg: coupon,
-      alt: "coupon",
+      cardImg: "ri:coupon-2-line",
+      color: "#0071FF",
       button: card_1_btn,
       path: "/coupon",
     },
     {
       title: card_2,
       body: card_2_desc,
-      cardImg: star,
-      alt: "star",
+      cardImg: "el:star-alt",
+      color: "#0071FF",
       button: card_2_btn,
       path: "/about",
     },
     {
       title: card_3,
       body: card_3_desc,
-      cardImg: location,
-      alt: "directions",
+      cardImg: "bx:bx-map",
+      color: "#0071FF",
       button: card_3_btn,
       path: "/",
     },
   ];
 
-  //path from cardData obj[]
-  //setValue to trigger active on nav link tab
-  const activeLink = (path) => {
-    if (path === "/about") {
-      setValue(1);
-    }
-    if (path === "/coupon") {
-      setValue(2);
-    }
-    if (path === "/") {
-      setValue(0);
+  const handleClick = (path) => {
+    if (path !== "/") {
+      history.push(path);
+    } else {
       window.open("https://goo.gl/maps/oUhxzkZFZpzxpaHN9");
     }
   };
@@ -69,20 +60,23 @@ const CardGroup = ({ setValue }) => {
     <Container
       maxWidth="lg"
       component="section"
-      style={{ paddingTop: "3em", paddingBottom: "3em" }}
+      style={{ paddingTop: "6em", paddingBottom: "1em" }}
     >
-      <LogoDivider padding="0em 0em 2em 0em" />
-      <Grid container justifyContent="space-evenly" spacing={3}>
-        {cardData.map(({ title, body, cardImg, alt, button, path }) => (
+      <Grid container justifyContent="space-evenly" spacing={5}>
+        {cardData.map(({ title, body, cardImg, color, button, path }) => (
           <React.Fragment key={title}>
-            <Grid item xs={11} sm={8} md={4} lg={3} align="center">
-              <CardItem title={title} body={body} cardImg={cardImg} alt={alt}>
+            <Grid item xs={12} md={4} align="center">
+              <CardItem
+                title={title}
+                body={body}
+                cardImg={cardImg}
+                color={color}
+              >
                 <Button
                   variant="outlined"
                   color="primary"
-                  component={NavLink}
-                  to={path}
-                  onClick={() => activeLink(path)}
+                  size="small"
+                  onClick={() => handleClick(path)}
                 >
                   <b>{button}</b>
                 </Button>

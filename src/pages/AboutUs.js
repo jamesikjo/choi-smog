@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Container, Divider, Typography } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { LanguageContext } from "./../contexts/LanguageContext";
 import "react-awesome-slider/dist/styles.css";
 import AwesomeSlider from "react-awesome-slider";
@@ -24,14 +24,10 @@ const AboutUs = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5" color="primary">
+        <Typography variant="h5" color="primary" gutterBottom>
           <b>{aboutUs}</b>
         </Typography>
-        <Divider
-          style={{
-            width: "2.5em",
-          }}
-        />
+
         <Typography variant="subtitle1" color="primary" align="center">
           {aboutUsDesc}
         </Typography>

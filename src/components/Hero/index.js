@@ -65,10 +65,9 @@ const Hero = () => {
       >
         <Grid item container direction="column" md={4} align="center">
           <Grid item>
-            <Typography variant="h5" color="primary">
+            <Typography variant="h5" color="primary" gutterBottom>
               <b>{buinessHours}</b>
             </Typography>
-            <Divider />
             <Typography variant="body1" color="primary">
               {monday}-{friday} : <b>9 AM – 6 PM</b>
             </Typography>
@@ -83,10 +82,9 @@ const Hero = () => {
 
         <Grid item container md={4} direction="column" align="center">
           <Grid item>
-            <Typography variant="h5" color="primary">
+            <Typography variant="h5" color="primary" gutterBottom>
               <b>{location}</b>
             </Typography>
-            <Divider />
           </Grid>
           <Grid item>
             <Typography variant="body1" color="primary">

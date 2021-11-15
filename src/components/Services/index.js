@@ -2,13 +2,16 @@ import React, { useContext } from "react";
 import {
   Box,
   Container,
-  Divider,
   Grid,
+  ListItem,
   makeStyles,
   Typography,
   useMediaQuery,
   useTheme,
+  ListItemText,
+  ListItemIcon,
 } from "@material-ui/core";
+import { Icon } from "@iconify/react";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import starLogo from "../../assets/images/star-logo.png";
 import AwesomeSlider from "react-awesome-slider";
@@ -23,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: "4em 0em",
     },
+  },
+  serviceList: {
+    listStyle: `url(@material-ui/icons/Check)`,
   },
   starLogo: {
     width: 180,
@@ -42,38 +48,41 @@ const Services = () => {
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg">
         <Grid container alignItems="center">
-          <Grid
-            container
-            item
-            direction="column"
-            xs={12}
-            md={6}
-            alignItems="center"
-          >
-            <Grid item align="center" style={{ marginBottom: "1.5em" }}>
-              <Typography variant={matchMD ? "h5" : "h4"} color="primary">
-                <b>{servicesTitle}</b>
-              </Typography>
-              <Divider />
-              <Typography
-                component="ul"
-                color="primary"
-                align="left"
-                style={{ paddingLeft: 15 }}
-              >
-                {services.map((s) => (
-                  <Typography
-                    component="li"
-                    variant={matchMD ? "subtitle2" : "subtitle1"}
-                    key={s}
-                  >
-                    {s}
-                  </Typography>
-                ))}
-              </Typography>
+          <Grid item xs={12} md={6}>
+            <Typography
+              variant={matchMD ? "h5" : "h4"}
+              color="primary"
+              align="center"
+            >
+              <b>{servicesTitle}</b>
+            </Typography>
+            <Grid
+              item
+              container
+              component="ul"
+              style={{ paddingLeft: 0, margin: "1.5rem 0rem" }}
+            >
+              {services.map((s) => (
+                <Grid item xs={12} md={6} key={s}>
+                  <ListItem disableGutters>
+                    <ListItemIcon style={{ minWidth: "40px" }}>
+                      <Icon
+                        icon="bi:check-lg"
+                        width={30}
+                        height={30}
+                        color="#0071FF"
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={s}
+                      primaryTypographyProps={{ variant: "body1" }}
+                    />
+                  </ListItem>
+                </Grid>
+              ))}
             </Grid>
 
-            <Grid item>
+            <Grid item align="center">
               <img
                 src={starLogo}
                 alt="star logo"
