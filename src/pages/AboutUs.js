@@ -24,7 +24,7 @@ const AboutUs = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5" color="primary" gutterBottom>
+        <Typography variant="h4" color="primary" gutterBottom>
           <b>{aboutUs}</b>
         </Typography>
 

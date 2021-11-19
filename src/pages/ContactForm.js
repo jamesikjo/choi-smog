@@ -54,23 +54,24 @@ const ContactForm = () => {
         className={classes.form}
       >
         <input type="hidden" name="form-name" value="contact choismog" />
-        <label>
-          <Typography
-            color="primary"
-            variant="h5"
-            align="center"
-            justify="center"
-          >
-            <b>Contact Us</b>
-          </Typography>
-        </label>
         <Container maxWidth="xs">
           <Grid container direction="column" justifyContent="center">
             <Grid container direction="column" spacing={2}>
               <Grid item xs={12}>
-                <Typography color="primary" variant="body2">
-                  NAME
+                <Typography
+                  color="primary"
+                  variant="h4"
+                  justify="center"
+                  gutterBottom
+                >
+                  <b>Contact us</b>
                 </Typography>
+                <Typography color="primary" variant="body1" justify="center">
+                  Use the form below to send us a message and we'll response as
+                  soon as possible
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -79,14 +80,10 @@ const ContactForm = () => {
                   label="name"
                   name="name"
                   type="name"
-                  InputLabelProps={{ style: { fontSize: 0 }, shrink: false }}
                 />
               </Grid>
 
               <Grid item xs={12}>
-                <Typography color="primary" variant="body2">
-                  EMAIL ADDRESS
-                </Typography>
                 <TextField
                   required
                   fullWidth
@@ -95,14 +92,10 @@ const ContactForm = () => {
                   label="email"
                   name="email"
                   type="email"
-                  InputLabelProps={{ style: { fontSize: 0 }, shrink: false }}
                 />
               </Grid>
 
               <Grid item xs={12}>
-                <Typography color="primary" variant="body2">
-                  SUBJECT
-                </Typography>
                 <TextField
                   required
                   fullWidth
@@ -116,7 +109,6 @@ const ContactForm = () => {
                   SelectProps={{
                     native: true,
                   }}
-                  InputLabelProps={{ style: { fontSize: 0 }, shrink: false }}
                 >
                   {subjects.map((option) => (
                     <option key={option} value={option}>
@@ -127,9 +119,6 @@ const ContactForm = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <Typography color="primary" variant="body2">
-                  MESSAGE
-                </Typography>
                 <TextField
                   required
                   fullWidth
@@ -139,7 +128,6 @@ const ContactForm = () => {
                   id="message"
                   label="message"
                   name="message"
-                  InputLabelProps={{ style: { fontSize: 0 }, shrink: false }}
                   style={{ paddingBottom: "1rem" }}
                 />
               </Grid>
