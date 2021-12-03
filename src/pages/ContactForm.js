@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   TextField,
   Typography,
@@ -8,6 +8,8 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import Layout from "../components/Layout";
+import { LanguageContext } from "./../contexts/LanguageContext";
+import languageData from "./../assets/languageData";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -26,9 +28,11 @@ const subjects = ["General Question", "Appointment", "Estimate"];
 
 const ContactForm = () => {
   const classes = useStyles();
-
+  const { language } = useContext(LanguageContext);
+  const { contactUs, contactUsDesc, name, email, subject, message, send } =
+    languageData[language];
   const [success, setSuccess] = useState(false);
-  const [subject, setSubject] = useState("");
+  const [formSubject, setSubject] = useState("");
 
   const handleChange = (event) => {
     setSubject(event.target.value);
@@ -63,12 +67,12 @@ const ContactForm = () => {
                   variant="h4"
                   justify="center"
                   gutterBottom
+                  style={{ fontWeight: "bold" }}
                 >
-                  <b>Contact us</b>
+                  {contactUs}
                 </Typography>
                 <Typography color="primary" variant="body1" justify="center">
-                  Use the form below to send us a message and we'll response as
-                  soon as possible
+                  {contactUsDesc}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -76,9 +80,9 @@ const ContactForm = () => {
                   required
                   fullWidth
                   variant="outlined"
-                  id="name"
-                  label="name"
-                  name="name"
+                  id={name}
+                  label={name}
+                  name={name}
                   type="name"
                 />
               </Grid>
@@ -88,9 +92,9 @@ const ContactForm = () => {
                   required
                   fullWidth
                   variant="outlined"
-                  id="email"
-                  label="email"
-                  name="email"
+                  id={email}
+                  label={email}
+                  name={email}
                   type="email"
                 />
               </Grid>
@@ -102,9 +106,9 @@ const ContactForm = () => {
                   select
                   variant="outlined"
                   id="Native subject"
-                  value={subject}
-                  label="subject"
-                  name="subject"
+                  value={formSubject}
+                  label={subject}
+                  name={message}
                   onChange={handleChange}
                   SelectProps={{
                     native: true,
@@ -125,9 +129,9 @@ const ContactForm = () => {
                   multiline
                   rows={4}
                   variant="outlined"
-                  id="message"
-                  label="message"
-                  name="message"
+                  id={message}
+                  label={message}
+                  name={message}
                   style={{ paddingBottom: "1rem" }}
                 />
               </Grid>
@@ -143,7 +147,7 @@ const ContactForm = () => {
                   fontSize: 14,
                 }}
               >
-                Send Message
+                {send}
               </Button>
             </Grid>
 

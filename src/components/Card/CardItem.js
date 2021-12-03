@@ -1,6 +1,5 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { Box, Avatar } from "@material-ui/core";
+import { Box, Avatar, Typography } from "@material-ui/core";
 import { Icon } from "@iconify/react";
 
 const CardItem = ({ children: button, title, body, cardImg, color }) => {
@@ -19,9 +18,9 @@ const CardItem = ({ children: button, title, body, cardImg, color }) => {
       <Typography
         variant="h6"
         color="primary"
-        style={{ marginBottom: "0.5rem" }}
+        style={{ marginBottom: "0.5rem", fontWeight: "bold" }}
       >
-        <b>{title}</b>
+        {title}
       </Typography>
       <Typography
         variant="body1"

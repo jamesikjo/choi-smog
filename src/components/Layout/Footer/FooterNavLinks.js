@@ -6,7 +6,7 @@ const FooterNavLinks = ({ languageData, footerFont }) => {
   const history = useHistory();
   const { home, aboutUs, coupon, contact } = languageData;
 
-  const navLinks = [
+  const NAVLINKS = [
     { title: home, path: "/" },
     { title: aboutUs, path: "/about" },
     { title: coupon, path: "/coupon" },
@@ -18,7 +18,7 @@ const FooterNavLinks = ({ languageData, footerFont }) => {
   };
   return (
     <>
-      {navLinks.map(({ title, path }, i) => (
+      {NAVLINKS.map(({ title, path }, i) => (
         <React.Fragment key={i}>
           <Typography
             variant="body2"
@@ -28,7 +28,7 @@ const FooterNavLinks = ({ languageData, footerFont }) => {
           >
             {title}
           </Typography>
-          {i < navLinks.length - 1 && (
+          {i < NAVLINKS.length - 1 && (
             <Divider
               orientation="vertical"
               flexItem

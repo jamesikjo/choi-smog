@@ -15,11 +15,6 @@ const theme = createTheme({
 });
 
 theme.overrides = {
-  // MuiButton: {
-  //   root: {
-  //     borderRadius: 0,
-  //   },
-  // },
   MuiDivider: {
     root: {
       width: "2em",

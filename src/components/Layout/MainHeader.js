@@ -7,12 +7,13 @@ import {
   useMediaQuery,
   makeStyles,
 } from "@material-ui/core";
-import { LanguageContext } from "./../contexts/LanguageContext";
-import shopLogo from "./../assets/images/shop-logo.png";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import shopLogo from "../../assets/images/shop-logo.png";
 import ToggleButton from "@material-ui/lab/ToggleButton";
-import languageData from "../assets/languageData";
+import languageData from "../../assets/languageData";
+import { NavLink } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   toggleButton: {
     border: "none",
     padding: 0,
@@ -20,7 +21,11 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "transparent",
     },
   },
-}));
+});
+
+const englishLogo = "https://img.icons8.com/color/48/000000/usa-circular.png";
+const koreanLogo =
+  "https://img.icons8.com/color/48/000000/south-korea-circular.png";
 
 const MainHeader = () => {
   const classes = useStyles();
@@ -28,10 +33,6 @@ const MainHeader = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const theme = useTheme();
   const matchMD = useMediaQuery(theme.breakpoints.down("md"));
-
-  const english = "https://img.icons8.com/color/48/000000/usa-circular.png";
-  const korean =
-    "https://img.icons8.com/color/48/000000/south-korea-circular.png";
 
   const handleLanguageToggle = (e, newValue) => {
     setSelected(!selected);
@@ -46,12 +47,14 @@ const MainHeader = () => {
       component="header"
     >
       <Grid container alignItems="flex-end">
-        <Grid item xs={12} sm={6} align={matchMD ? "center" : undefined}>
-          <img
-            src={shopLogo}
-            style={{ height: 85, width: 350 }}
-            alt="shop logo"
-          />
+        <Grid item xs={12} sm={6} align={matchMD ? "center" : null}>
+          <NavLink to="/">
+            <img
+              src={shopLogo}
+              style={{ height: 75, width: 320 }}
+              alt="shop logo"
+            />
+          </NavLink>
         </Grid>
         <Grid
           item
@@ -62,28 +65,35 @@ const MainHeader = () => {
           justifyContent={matchMD ? "center" : "flex-end"}
         >
           <Grid item align="end" style={{ marginRight: "0.5rem" }}>
-            <Typography variant="h5" color="primary">
-              <b>(213) 365-0244</b>
+            <Typography
+              variant="h5"
+              color="primary"
+              style={{ fontWeight: "bold" }}
+            >
+              (213) 365-0244
             </Typography>
             <Typography
               variant="body2"
               color="primary"
               style={{
                 fontSize: matchMD && 11,
+                fontWeight: "bold",
               }}
             >
-              <b>3225 W Olympic Blvd Ste 1 Los Angeles, CA 90006</b>
+              3225 W Olympic Blvd Ste 1 Los Angeles, CA 90006
             </Typography>
           </Grid>
           <Grid item align="center">
             <ToggleButton
-              value={language === "english" ? "korean" : "english"} //toggle value based on language state
+              //toggle value based on language state
+              value={language === "english" ? "korean" : "english"}
               selected={selected}
               onChange={handleLanguageToggle}
               className={classes.toggleButton}
+              style={{ backgroundColor: "transparent" }}
             >
               <img
-                src={language === "english" ? english : korean}
+                src={language === "english" ? englishLogo : koreanLogo}
                 alt="english"
                 style={{ width: 40, height: 40 }}
               />

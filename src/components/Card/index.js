@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { Grid, Container, Button } from "@material-ui/core";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import CardItem from "./CardItem";
-
 import languageData from "./../../assets/languageData";
 
 const CardGroup = () => {
@@ -60,12 +59,18 @@ const CardGroup = () => {
     <Container
       maxWidth="lg"
       component="section"
-      style={{ paddingTop: "6em", paddingBottom: "1em" }}
+      style={{ paddingTop: "5em", paddingBottom: "4em" }}
     >
-      <Grid container justifyContent="space-evenly" spacing={5}>
+      <Grid container>
         {cardData.map(({ title, body, cardImg, color, button, path }) => (
           <React.Fragment key={title}>
-            <Grid item xs={12} md={4} align="center">
+            <Grid
+              item
+              xs={12}
+              md={4}
+              align="center"
+              style={{ marginBottom: "4rem" }}
+            >
               <CardItem
                 title={title}
                 body={body}
@@ -77,8 +82,9 @@ const CardGroup = () => {
                   color="primary"
                   size="small"
                   onClick={() => handleClick(path)}
+                  style={{ fontWeight: "bold" }}
                 >
-                  <b>{button}</b>
+                  {button}
                 </Button>
               </CardItem>
             </Grid>

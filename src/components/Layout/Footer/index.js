@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { makeStyles, Typography, Grid } from "@material-ui/core";
-import shopLogo from "./../assets/images/shop-logo.png";
-import creditCards from ".././assets/images/credit-cards.png";
+import shopLogo from "../../../assets/images/shop-logo.png";
+import creditCards from "../../../assets/images/credit-cards.png";
 import FooterNavLinks from "./FooterNavLinks";
-import languageData from "./../assets/languageData";
-import { LanguageContext } from "./../contexts/LanguageContext";
+import languageData from "../../../assets/languageData";
+import { LanguageContext } from "../../../contexts/LanguageContext";
 
 const useStyles = makeStyles((theme) => ({
   footer: {

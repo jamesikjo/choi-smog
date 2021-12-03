@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { makeStyles, Container, Button } from "@material-ui/core";
 import { LanguageContext } from "../../contexts/LanguageContext";
-import languageData from "./../../assets/languageData";
+import languageData from "../../assets/languageData";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     backgroundColor: "#e7e7e7",
   },
@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-around",
   },
-}));
+});
 
 const NavBar = () => {
   const classes = useStyles();
   const { language } = useContext(LanguageContext);
   const { home, aboutUs, coupon, contact } = languageData[language];
 
-  const navLinks = [
+  const NAVLINKS = [
     { title: home, path: "/" },
     { title: aboutUs, path: "/about" },
     { title: coupon, path: "/coupon" },
@@ -30,7 +30,7 @@ const NavBar = () => {
   return (
     <nav className={classes.root}>
       <Container maxWidth="md" className={classes.navContainer}>
-        {navLinks.map(({ title, path }) => (
+        {NAVLINKS.map(({ title, path }) => (
           <Button
             key={title}
             component={NavLink}
@@ -39,7 +39,11 @@ const NavBar = () => {
             size="large"
             variant="text"
             color="primary"
-            style={{ padding: "12px 8px", fontWeight: "bold" }}
+            style={{
+              padding: "12px 8px",
+              fontWeight: "bold",
+              backgroundColor: "transparent",
+            }}
             activeStyle={{
               color: "#0071ff",
             }}
