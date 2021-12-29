@@ -47,7 +47,7 @@ const Hero = () => {
             align="center"
           >
             <Typography
-              variant="h4"
+              variant={matchSM ? "h5" : "h4"}
               color="primary"
               style={{ fontWeight: "bold" }}
             >
@@ -55,7 +55,7 @@ const Hero = () => {
             </Typography>
             <Divider style={{ margin: "1em 0em" }} />
             <Typography
-              variant="h5"
+              variant="h6"
               color="primary"
               align="center"
               gutterBottom

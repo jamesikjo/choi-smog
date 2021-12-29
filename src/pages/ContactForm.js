@@ -61,11 +61,10 @@ const ContactForm = () => {
         <Container maxWidth="xs">
           <Grid container direction="column" justifyContent="center">
             <Grid container direction="column" spacing={2}>
-              <Grid item xs={12}>
+              <Grid item xs={12} align="center">
                 <Typography
                   color="primary"
                   variant="h4"
-                  justify="center"
                   gutterBottom
                   style={{ fontWeight: "bold" }}
                 >
@@ -82,7 +81,7 @@ const ContactForm = () => {
                   variant="outlined"
                   id={name}
                   label={name}
-                  name={name}
+                  name="name"
                   type="name"
                 />
               </Grid>
@@ -94,7 +93,7 @@ const ContactForm = () => {
                   variant="outlined"
                   id={email}
                   label={email}
-                  name={email}
+                  name="email"
                   type="email"
                 />
               </Grid>
@@ -108,7 +107,7 @@ const ContactForm = () => {
                   id="Native subject"
                   value={formSubject}
                   label={subject}
-                  name={message}
+                  name="subject"
                   onChange={handleChange}
                   SelectProps={{
                     native: true,
@@ -131,7 +130,7 @@ const ContactForm = () => {
                   variant="outlined"
                   id={message}
                   label={message}
-                  name={message}
+                  name="message"
                   style={{ paddingBottom: "1rem" }}
                 />
               </Grid>
