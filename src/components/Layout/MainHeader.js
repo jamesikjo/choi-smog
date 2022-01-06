@@ -77,7 +77,7 @@ const MainHeader = () => {
               color="primary"
               style={{
                 fontSize: matchMD && 11,
-                fontWeight: "bold",
+                fontWeight: "600",
               }}
             >
               3225 W Olympic Blvd Ste 1 Los Angeles, CA 90006

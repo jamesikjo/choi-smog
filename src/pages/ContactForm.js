@@ -6,6 +6,7 @@ import {
   Grid,
   Container,
   makeStyles,
+  Box,
 } from "@material-ui/core";
 import Layout from "../components/Layout";
 import { LanguageContext } from "./../contexts/LanguageContext";

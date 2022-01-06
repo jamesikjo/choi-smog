@@ -41,7 +41,7 @@ const NavBar = () => {
             color="primary"
             style={{
               padding: "12px 8px",
-              fontWeight: "bold",
+              fontWeight: "600",
               backgroundColor: "transparent",
             }}
             activeStyle={{

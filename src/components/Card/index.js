@@ -82,7 +82,6 @@ const CardGroup = () => {
                   color="primary"
                   size="small"
                   onClick={() => handleClick(path)}
-                  style={{ fontWeight: "bold" }}
                 >
                   {button}
                 </Button>

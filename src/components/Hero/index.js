@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        py: matchSM ? 5 : 10,
+        py: matchSM ? 5 : 15,
       }}
     >
       <Container maxWidth="lg" component="section" style={{ pb: "4rem" }}>
@@ -82,13 +82,13 @@ const Hero = () => {
                 {buinessHours}
               </Typography>
               <Typography variant="body1" color="primary">
-                {monday}-{friday} : <b>9 AM – 6 PM</b>
+                {monday}-{friday} : 9 AM – 6 PM
               </Typography>
               <Typography variant="body1" color="primary">
-                {saturday} : <b>9 AM – 4 PM</b>
+                {saturday} : 9 AM – 4 PM
               </Typography>
               <Typography variant="body1" color="primary">
-                {sunday} : <b>{closed}</b>
+                {sunday} : {closed}
               </Typography>
             </Grid>
           </Grid>
