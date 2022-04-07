@@ -12,6 +12,7 @@ import shopLogo from "../../assets/images/shop-logo.png";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import languageData from "../../assets/languageData";
 import { NavLink } from "react-router-dom";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles({
   toggleButton: {
@@ -97,6 +98,7 @@ const MainHeader = () => {
                 alt="english"
                 style={{ width: 40, height: 40 }}
               />
+              <KeyboardArrowDownIcon />
             </ToggleButton>
           </Grid>
         </Grid>
