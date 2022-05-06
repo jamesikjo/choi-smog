@@ -2,7 +2,7 @@ const languageData = {
   english: {
     title: "Choi Smog",
     home: "Home",
-    aboutUs: "About",
+    aboutUs: "About Us",
     coupon: "Coupon",
     couponDesc: "Coming Soon!",
     contact: "Contact",

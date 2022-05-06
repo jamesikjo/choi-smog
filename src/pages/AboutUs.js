@@ -15,8 +15,8 @@ const AboutUs = () => {
         maxWidth="md"
         component="main"
         style={{
-          paddingTop: "3em",
-          paddingBottom: "3em",
+          paddingTop: "5em",
+          paddingBottom: "5em",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -35,7 +35,7 @@ const AboutUs = () => {
           {aboutUsDesc}
         </Typography>
 
-        <LogoDivider padding="1.5em 0em" />
+        <LogoDivider padding="3em 0em" />
         <Container maxWidth="sm">
           <img
             src="https://s3-media0.fl.yelpcdn.com/bphoto/k2_SCHUty5nVGVytFvlmVg/o.jpg"

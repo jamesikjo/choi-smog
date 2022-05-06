@@ -82,10 +82,10 @@ const Hero = () => {
                 {buinessHours}
               </Typography>
               <Typography variant="body1" color="primary">
-                {monday}-{friday} : 9 AM – 6 PM
+                {monday}-{friday} : 8 AM – 6 PM
               </Typography>
               <Typography variant="body1" color="primary">
-                {saturday} : 9 AM – 4 PM
+                {saturday} : 8 AM – 4 PM
               </Typography>
               <Typography variant="body1" color="primary">
                 {sunday} : {closed}
